@@ -1,6 +1,6 @@
-# Capstone Project Manager
+# IndieGameConnect
 
-A full-stack Next.js application for managing capstone projects. Built as a sample project for students learning modern web development.
+A platform tailored for indie game developers to build their audience, engage with players, and collaborate with other developers. Functioning similarly to promotion used by independent book authors but specifically for indie games.
 
 ## Tech Stack
 
@@ -13,12 +13,12 @@ A full-stack Next.js application for managing capstone projects. Built as a samp
 
 ## Features
 
-- User authentication (email/password + OAuth)
-- Project management with team collaboration
-- Task tracking with Kanban-style board
-- Milestone management
-- Role-based access control
-- Responsive design
+- **Audience Building & Mailing Lists:** Game Developers can collect emails to build and manage multiple mailing lists.
+- **Cross-Promotion:** Newsletter swaps between developers (Directory and Auto-Matching).
+- **Content Distribution:** Devlogs, game builds, and dynamic game key distribution.
+- **Testing & Early Reviewers:** Dedicated campaigns for beta testing and release review keys.
+- **User Roles:** Distinct roles for Game Developers and Players.
+- Responsive design & User authentication (email/password + OAuth)
 
 ## Getting Started
 
@@ -31,8 +31,8 @@ A full-stack Next.js application for managing capstone projects. Built as a samp
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/saberamini/SampleNextJS.git YourProjectName
-   cd YourProjectName
+   git clone https://github.com/JetShark/IndieGameConnect.git
+   cd IndieGameConnect
    ```
 
 2. **Set up environment variables**
