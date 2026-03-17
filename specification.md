@@ -43,4 +43,19 @@ Based on a tiered subscription model (customized for the indie game niche):
 - **Authentication:** NextAuth.js
 - **Styling:** Tailwind CSS
 
----
+## Page: Features
+
+- Collecting emails on a landing page
+- Scheduling email blasts
+- Connecting with other devs to swap mailing lists
+
+## Page: About
+"We are a group of indie game dev enthousiasts, we've seen what news letter communities have done for book publishing, and we want to do the same for gamers!"
+
+## Page: Login
+Email / Password login only for MVP.
+
+## Page: Pricing
+- $30/year - Starter: 1 mailing list, basic email collection, group promotions.
+- $200/year - Pro: Unlimited games, direct developer newsletter swaps, auto-matching, mailing list integrations.
+- $300/year - Publisher: Unlimited downloads/claims, advanced integrations for multiple studio names, priority support.
