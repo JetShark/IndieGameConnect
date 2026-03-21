@@ -86,7 +86,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Create project and add owner as team member in a transaction
-    const project = await prisma.$transaction(async (tx) => {
+    const project = await prisma.$transaction(async (tx: any) => {
       const newProject = await tx.project.create({
         data: {
           name: name.trim(),
