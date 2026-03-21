@@ -28,36 +28,15 @@ export default function FeaturesPage() {
                 <li className="flex items-center gap-3"><span className="text-primary-500">✓</span> Frictionless signup</li>
               </ul>
             </div>
-            <div className="flex-1 order-1 md:order-2 bg-gradient-to-tr from-blue-100 to-indigo-50 rounded-3xl p-8 shadow-inner aspect-video flex items-center justify-center">
-              <div className="w-full max-w-sm bg-white rounded-xl shadow-xl overflow-hidden animate-pulse">
-                <div className="h-48 bg-gray-200"></div>
-                <div className="p-6">
-                  <div className="h-6 bg-gray-200 rounded w-3/4 mb-4"></div>
-                  <div className="h-4 bg-gray-200 rounded w-full mb-2"></div>
-                  <div className="h-4 bg-gray-200 rounded w-5/6 mb-6"></div>
-                  <div className="h-10 bg-blue-500 rounded-md w-full"></div>
-                </div>
-              </div>
+            <div className="flex-1 order-1 md:order-2 bg-gradient-to-tr from-blue-100 to-indigo-50 rounded-3xl p-8 shadow-inner flex items-center justify-center">
+              <img src="/mockups/landing_page.png" alt="Landing Page" className="w-full h-auto rounded-xl shadow-xl hover:scale-105 transition-transform duration-300" />
             </div>
           </div>
 
           {/* Feature 2 */}
           <div className="flex flex-col md:flex-row items-center gap-12">
-            <div className="flex-1 bg-gradient-to-tr from-purple-100 to-pink-50 rounded-3xl p-8 shadow-inner aspect-video flex items-center justify-center">
-              <div className="w-full max-w-sm bg-white rounded-xl shadow-xl p-6">
-                <div className="flex items-center gap-4 mb-6 border-b pb-4">
-                  <div className="w-12 h-12 bg-gray-200 rounded-full"></div>
-                  <div>
-                    <div className="h-4 bg-gray-200 rounded w-24 mb-2"></div>
-                    <div className="h-3 bg-gray-200 rounded w-32"></div>
-                  </div>
-                </div>
-                <div className="space-y-3">
-                  <div className="h-3 bg-gray-200 rounded w-full"></div>
-                  <div className="h-3 bg-gray-200 rounded w-5/6"></div>
-                  <div className="h-3 bg-gray-200 rounded w-4/6"></div>
-                </div>
-              </div>
+            <div className="flex-1 bg-gradient-to-tr from-purple-100 to-pink-50 rounded-3xl p-8 shadow-inner flex items-center justify-center">
+              <img src="/mockups/devlog_editor.png" alt="Devlog Editor" className="w-full h-auto rounded-xl shadow-xl hover:scale-105 transition-transform duration-300" />
             </div>
             <div className="flex-1">
               <div className="inline-block p-4 rounded-2xl bg-purple-100 text-purple-600 mb-6 text-3xl">🚀</div>
@@ -87,16 +66,12 @@ export default function FeaturesPage() {
                 <li className="flex items-center gap-3"><span className="text-indigo-500">✓</span> Track swap performance</li>
               </ul>
             </div>
-            <div className="flex-1 order-1 md:order-2 bg-gradient-to-tr from-indigo-100 to-blue-50 rounded-3xl p-8 shadow-inner aspect-video flex items-center justify-center">
-              <div className="flex items-center gap-4">
-                <div className="w-24 h-24 bg-white rounded-full shadow-lg flex items-center justify-center text-3xl">👾</div>
-                <div className="text-blue-500 text-4xl animate-bounce">⇄</div>
-                <div className="w-24 h-24 bg-white rounded-full shadow-lg flex items-center justify-center text-3xl">🕹️</div>
-              </div>
+            <div className="flex-1 order-1 md:order-2 bg-gradient-to-tr from-indigo-100 to-blue-50 rounded-3xl p-8 shadow-inner flex items-center justify-center">
+              <img src="/mockups/matchmaking_dashboard.png" alt="Developer Matchmaking Dashboard" className="w-full h-auto rounded-xl shadow-xl hover:scale-105 transition-transform duration-300" />
             </div>
           </div>
         </div>
-        
+
         <div className="mt-24 text-center">
           <Link
             href="/pricing"

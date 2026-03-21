@@ -1,5 +1,5 @@
-Add core authentication and navigation features
+Add signup page and logo to navbar
 
-- Implement user authentication with login and signup pages
-- Add a new Navbar component
-- Create a protected projects API route
+- Implement user authentication with login and signup pages.
+- Add a new Navbar component.
+- Fix typo in protected projects API route.
