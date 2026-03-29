@@ -59,3 +59,9 @@ Email / Password login only for MVP.
 - $30/year - Starter: 1 mailing list, basic email collection, group promotions.
 - $200/year - Pro: Unlimited games, direct developer newsletter swaps, auto-matching, mailing list integrations.
 - $300/year - Publisher: Unlimited downloads/claims, advanced integrations for multiple studio names, priority support.
+
+## Page: Contact
+A form allowing users to submit comments or questions, including:
+- Subject line
+- Message body
+(Planned to trigger an email via a backend service in the future)
