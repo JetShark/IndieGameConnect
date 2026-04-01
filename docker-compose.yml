@@ -11,7 +11,7 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      test: [ "CMD-SHELL", "pg_isready -U postgres" ]
       interval: 5s
       timeout: 5s
       retries: 5
@@ -25,6 +25,7 @@ services:
       DATABASE_URL: postgresql://postgres:password@db:5432/capstone_db?schema=public
       NEXTAUTH_URL: http://localhost:3000
       NEXTAUTH_SECRET: your-secret-key-change-in-production
+      RESEND_API_KEY: ${RESEND_API_KEY}
     depends_on:
       db:
         condition: service_healthy

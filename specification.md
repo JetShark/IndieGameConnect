@@ -55,6 +55,9 @@ Based on a tiered subscription model (customized for the indie game niche):
 ## Page: Login
 Email / Password login only for MVP.
 
+## Page: Signup
+Users can create an account using an email address and password. Upon successful signup, a welcome email is sent to the user via the Resend API.
+
 ## Page: Pricing
 - $30/year - Starter: 1 mailing list, basic email collection, group promotions.
 - $200/year - Pro: Unlimited games, direct developer newsletter swaps, auto-matching, mailing list integrations.
