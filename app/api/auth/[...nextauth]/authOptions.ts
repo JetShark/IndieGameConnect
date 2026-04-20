@@ -12,26 +12,29 @@ declare module 'next-auth' {
     user: {
       id: string;
       email: string;
-      firstName: string;
-      lastName: string;
+      firstName: string | null;
+      lastName: string | null;
       role: string;
+      paidTier: string;
       image?: string | null;
     };
   }
   interface User {
     id: string;
-    firstName: string;
-    lastName: string;
+    firstName: string | null;
+    lastName: string | null;
     role: string;
+    paidTier: string;
   }
 }
 
 declare module 'next-auth/jwt' {
   interface JWT {
     id: string;
-    firstName: string;
-    lastName: string;
+    firstName: string | null;
+    lastName: string | null;
     role: string;
+    paidTier: string;
   }
 }
 
@@ -74,6 +77,7 @@ export const authOptions: AuthOptions = {
           firstName: user.firstName,
           lastName: user.lastName,
           role: user.role,
+          paidTier: user.paidTier,
           image: user.image,
         };
       },
@@ -91,7 +95,8 @@ export const authOptions: AuthOptions = {
                 email: profile.email,
                 firstName: profile.given_name || profile.name?.split(' ')[0] || '',
                 lastName: profile.family_name || profile.name?.split(' ').slice(1).join(' ') || '',
-                role: 'STUDENT',
+                role: 'PLAYER',
+                paidTier: 'FREE',
                 image: profile.picture,
               };
             },
@@ -112,7 +117,8 @@ export const authOptions: AuthOptions = {
                 email: profile.email || '',
                 firstName: nameParts[0] || profile.login,
                 lastName: nameParts.slice(1).join(' ') || '',
-                role: 'STUDENT',
+                role: 'PLAYER',
+                paidTier: 'FREE',
                 image: profile.avatar_url,
               };
             },
@@ -134,6 +140,7 @@ export const authOptions: AuthOptions = {
         token.firstName = user.firstName;
         token.lastName = user.lastName;
         token.role = user.role;
+        token.paidTier = user.paidTier;
       }
 
       // Handle session updates
@@ -152,10 +159,12 @@ export const authOptions: AuthOptions = {
         session.user.firstName = token.firstName;
         session.user.lastName = token.lastName;
         session.user.role = token.role;
+        session.user.paidTier = token.paidTier;
       }
       return session;
     },
   },
+
 
   pages: {
     signIn: '/auth/signin',
@@ -164,3 +173,4 @@ export const authOptions: AuthOptions = {
 
   debug: process.env.NODE_ENV === 'development',
 };
+

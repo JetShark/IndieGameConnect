@@ -55,7 +55,7 @@ export async function POST(request: NextRequest) {
         password: hashedPassword,
         firstName: firstName.trim(),
         lastName: lastName.trim(),
-        role: 'STUDENT',
+        role: 'PLAYER',
         isVerified: true, // In production, set to false and implement email verification
       },
       select: {
@@ -69,7 +69,7 @@ export async function POST(request: NextRequest) {
     });
 
     // Send welcome email (runs in background, doesn't block signup)
-    sendWelcomeEmail(user.email, user.firstName).catch((err) =>
+    sendWelcomeEmail(user.email, user.firstName || '').catch((err) =>
       console.error('Welcome email failed:', err)
     );
 

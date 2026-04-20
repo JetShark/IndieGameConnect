@@ -41,7 +41,7 @@ export default function PricingPage() {
               </li>
             </ul>
             <Link
-              href="/signup?plan=starter"
+              href="/auth/signup?plan=starter"
               className="w-full flex justify-center py-3 px-4 border border-primary-600 rounded-full shadow-sm text-sm font-bold text-primary-600 hover:bg-primary-50 transition-colors"
             >
               Get Started
@@ -82,7 +82,7 @@ export default function PricingPage() {
               </li>
             </ul>
             <Link
-              href="/signup?plan=pro"
+              href="/auth/signup?plan=pro"
               className="w-full flex justify-center py-3 px-4 border border-transparent rounded-full shadow-lg text-sm font-bold text-primary-700 bg-white hover:bg-gray-50 transition-colors"
             >
               Start Pro Trial
@@ -116,7 +116,7 @@ export default function PricingPage() {
               </li>
             </ul>
             <Link
-              href="/signup?plan=publisher"
+              href="/auth/signup?plan=publisher"
               className="w-full flex justify-center py-3 px-4 border border-gray-300 rounded-full shadow-sm text-sm font-bold text-gray-700 bg-white hover:bg-gray-50 transition-colors"
             >
               Contact Sales
