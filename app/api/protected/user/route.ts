@@ -23,13 +23,6 @@ export async function GET() {
         role: true,
         image: true,
         createdAt: true,
-        _count: {
-          select: {
-            ownedProjects: true,
-            memberships: true,
-            tasks: true,
-          },
-        },
       },
     });
 
