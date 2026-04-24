@@ -4,6 +4,7 @@ import './globals.css';
 import { AuthProvider } from '@/app/contexts/AuthProvider';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import GoogleAnalytics from './components/GoogleAnalytics';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -20,6 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} min-h-screen flex flex-col`}>
+        <GoogleAnalytics />
         <AuthProvider>
           <Navbar />
           <main className="flex-1 flex flex-col">

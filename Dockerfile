@@ -21,6 +21,10 @@ COPY . .
 # Generate Prisma client
 RUN npx prisma generate
 
+# Provide public environment variables for the build
+ARG NEXT_PUBLIC_GA_MEASUREMENT_ID
+ENV NEXT_PUBLIC_GA_MEASUREMENT_ID=$NEXT_PUBLIC_GA_MEASUREMENT_ID
+
 # Build the application
 RUN npm run build
 
