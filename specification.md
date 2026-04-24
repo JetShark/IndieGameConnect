@@ -4,17 +4,18 @@
 IndieGameConnect is a platform tailored for indie game developers, functioning similarly to BookFunnel but for indie games. It focuses on helping developers build their audience, engage with players, and collaborate with other developers.
 
 ## User Roles
-- **Game Developer:** Can create and manage multiple mailing lists (create, duplicate, merge, or delete lists). They can distribute content and collaborate.
-- **Player:** Can view the lists they belong to, and subscribe or unsubscribe from lists.
+- **Admin:** Manages the platform and users.
+- **Developer:** Can create and manage games, mailing lists, devlog emails, landing pages, campaigns, and key distributions. Can create, duplicate, merge, or delete mailing lists to allow for specialized audiences (e.g., beta testers, early reviewers, etc.). Can distribute content and collaborate.
+- **Player:** Can view their subscriptions, claim game keys, and receive devlog updates. Can subscribe or unsubscribe from mailing lists.
 
 ## Core Features (Draft)
-- **Audience Building & Mailing Lists:** Game Developers can collect emails to build and manage multiple mailing lists. Players can manage their own subscriptions.
+- **Audience Building & Mailing Lists:** Game Developers can collect emails to build and manage multiple mailing lists via customizable landing pages (e.g., Space War landing page). These landing pages automatically trigger subscription confirmation emails. Players can manage their own subscriptions.
 - **Cross-Promotion (Newsletter Swaps):** 
   - **Directory:** Developers can browse a directory of other developers to send swap requests.
   - **Auto-Match:** Developers can request a 'number one match' which pairs them with another suitable developer to initiate a swap.
   - **Swap Agreement:** When both parties agree, they exchange a link to what they want to share (e.g., itch.io game listing), a description of the game, and a link to sign up for their respective mailing list.
 - **Content Distribution:** 
-  - **Devlogs & Updates:** Primarily rich-text emails with images. Images are hosted on the platform while in draft form and embedded directly into emails when sent.
+  - **Devlogs & Updates:** Primarily rich-text HTML emails with images. Includes templates for Welcome Emails and parameterized Subscription Confirmations. Mails are sent via the Resend API. Images are hosted on the platform while in draft form and embedded directly into emails when sent.
   - **Game Builds:** Links to external sites (e.g., itch.io) are used for sharing prototype builds.
   - **Key Distribution:** Developers can upload a list of unique game keys (e.g., Steam CD keys) which are dynamically distributed so each player receives a unique key in their email.
 - **Testing & Early Reviewers:** Developers can create campaigns and request participants directly from their main mailing list, moving them to a dedicated sub-list.
@@ -29,19 +30,22 @@ Based on a tiered subscription model (customized for the indie game niche):
 
 ## Integrations (MVP)
 - **Key Distribution:** For the initial minimum viable product (MVP), game keys (e.g., Steam keys) will be handled via simple CSV file uploads provided by the developers rather than direct API integrations.
+- **Email Delivery:** Resend API is integrated to handle transactional and marketing emails (Welcome, Subscription Confirmations).
 
 ## Analytics & Reporting (MVP)
+- **Application Analytics:** Google Analytics (GA4) is integrated across the application, securely passing the measurement ID through Docker build arguments.
 - **Email Metrics:** Game Developers can view open and click rates for their devlog emails.
 - **Cross-Promotion Tracking:** Developers can see the number of clicks generated from a newsletter swap.
 - *(Note: Advanced tracking like specific game key claim analytics is planned for post-MVP updates.)*
 
-## Tech Stack
+## Tech Stack & Architecture
 - **Framework:** Next.js 14 (App Router)
 - **Language:** TypeScript
-- **Database:** PostgreSQL
+- **Database:** PostgreSQL (with a schema mapped to core business models: Games, Mailing Lists, Subscriptions, Devlog Emails, Campaigns, and Game Keys)
 - **ORM:** Prisma
 - **Authentication:** NextAuth.js
 - **Styling:** Tailwind CSS
+- **Deployment:** Docker & docker-compose
 
 ## Page: Features
 
