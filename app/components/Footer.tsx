@@ -37,7 +37,7 @@ export default function Footer() {
           <p>&copy; {new Date().getFullYear()} IndieGameConnect. All rights reserved.</p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <Link href="#" className="hover:text-primary-600">Privacy Policy</Link>
-            <Link href="#" className="hover:text-primary-600">Terms of Service</Link>
+            <Link href="/terms" className="hover:text-primary-600">Terms of Service</Link>
           </div>
         </div>
       </div>
