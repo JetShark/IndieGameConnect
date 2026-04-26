@@ -1,5 +1,0 @@
-Add signup page and logo to navbar
-
-- Implement user authentication with login and signup pages.
-- Add a new Navbar component.
-- Fix typo in protected projects API route.

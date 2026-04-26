@@ -3,16 +3,41 @@
 import { useState } from "react";
 
 export default function ContactPage() {
+  const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
   const [body, setBody] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // In the future this will hook up to a backend to trigger an email
-    setIsSubmitted(true);
-    setSubject("");
-    setBody("");
+    setIsLoading(true);
+    setError(null);
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email, subject, message: body }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to send message.');
+      }
+
+      setIsSubmitted(true);
+      setEmail("");
+      setSubject("");
+      setBody("");
+    } catch (err: any) {
+      console.error("Contact Form Error:", err);
+      setError(err.message || "An unexpected error occurred. Please try again later.");
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -45,7 +70,28 @@ export default function ContactPage() {
               </button>
             </div>
           ) : (
-             <form onSubmit={handleSubmit} className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-6">
+              {error && (
+                <div className="bg-red-50 text-red-600 p-4 rounded-xl border border-red-200 text-sm font-medium">
+                  {error}
+                </div>
+              )}
+              
+              <div>
+                <label htmlFor="email" className="block text-sm font-bold text-gray-700 mb-2">
+                  Your Email
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="name@example.com"
+                  required
+                  className="w-full px-5 py-4 rounded-xl border border-gray-200 bg-gray-50 focus:bg-white focus:border-primary-500 focus:ring-4 focus:ring-primary-500/10 outline-none transition-all duration-200 font-medium text-gray-900 placeholder-gray-400"
+                />
+              </div>
+
               <div>
                 <label htmlFor="subject" className="block text-sm font-bold text-gray-700 mb-2">
                   Subject
@@ -79,12 +125,15 @@ export default function ContactPage() {
               <div className="pt-4">
                 <button
                   type="submit"
-                  className="w-full bg-gradient-to-r from-primary-600 to-secondary-600 text-white font-bold text-lg py-4 px-8 rounded-xl hover:from-primary-700 hover:to-secondary-700 transition-all duration-300 shadow-xl shadow-primary-500/20 hover:shadow-2xl hover:shadow-primary-500/30 hover:-translate-y-1 flex justify-center items-center gap-2 group"
+                  disabled={isLoading}
+                  className={`w-full bg-gradient-to-r from-primary-600 to-secondary-600 text-white font-bold text-lg py-4 px-8 rounded-xl transition-all duration-300 shadow-xl flex justify-center items-center gap-2 group ${isLoading ? 'opacity-70 cursor-not-allowed' : 'hover:from-primary-700 hover:to-secondary-700 shadow-primary-500/20 hover:shadow-2xl hover:shadow-primary-500/30 hover:-translate-y-1'}`}
                 >
-                  <span>Send Message</span>
-                  <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                  </svg>
+                  <span>{isLoading ? 'Sending...' : 'Send Message'}</span>
+                  {!isLoading && (
+                    <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                  )}
                 </button>
               </div>
             </form>

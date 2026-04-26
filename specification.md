@@ -69,9 +69,10 @@ Users can create an account using an email address and password. Upon successful
 
 ## Page: Contact
 A form allowing users to submit comments or questions, including:
+- User email address (used as the reply-to)
 - Subject line
 - Message body
-(Planned to trigger an email via a backend service in the future)
+Submissions are handled securely by an API route and delivered directly to the platform administrator's inbox via the Resend API.
 
 ## Page: Terms of Service
 A legal document outlining platform policies, acceptable use (anti-spam, key ownership), intellectual property rights, indemnification, and termination conditions.

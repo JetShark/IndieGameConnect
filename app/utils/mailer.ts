@@ -47,3 +47,38 @@ export async function sendSubscriptionEmail(email: string, firstName: string, ne
         return { success: false, error: err };
     }
 }
+
+export async function sendContactEmail(replyToEmail: string, subject: string, message: string) {
+    try {
+        const adminEmail = process.env.ADMIN_CONTACT_EMAIL;
+
+        if (!adminEmail) {
+            console.warn('ADMIN_CONTACT_EMAIL is not set in environment variables. Falling back to default.');
+        }
+
+        const { data, error } = await resend.emails.send({
+            from: 'onboarding@resend.dev', // Should have a verified domain for production in order to use contact@indiegameconnect.com
+            to: (adminEmail || 'support@indiegameconnect.com').toLowerCase(),
+            replyTo: replyToEmail,
+            subject: `[Contact Form] ${subject}`,
+            html: `<div style="font-family: sans-serif; color: #333;">
+                    <h2>New Contact Form Submission</h2>
+                    <p><strong>From:</strong> ${replyToEmail}</p>
+                    <p><strong>Subject:</strong> ${subject}</p>
+                    <hr />
+                    <p style="white-space: pre-wrap;">${message}</p>
+                   </div>`,
+        });
+
+        if (error) {
+            console.error('Failed to send contact email:', error);
+            return { success: false, error };
+        }
+
+        console.log('Contact email sent:', data?.id);
+        return { success: true, id: data?.id };
+    } catch (err) {
+        console.error('Error sending contact email:', err);
+        return { success: false, error: err };
+    }
+}
