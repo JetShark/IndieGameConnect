@@ -72,3 +72,9 @@ A form allowing users to submit comments or questions, including:
 - Subject line
 - Message body
 (Planned to trigger an email via a backend service in the future)
+
+## Page: Terms of Service
+A legal document outlining platform policies, acceptable use (anti-spam, key ownership), intellectual property rights, indemnification, and termination conditions.
+
+## Page: Privacy Policy
+A document detailing data collection (GA4, User Accounts, Database), usage, storage, security measures, user rights, and compliance with privacy frameworks like PIPEDA and GDPR.
