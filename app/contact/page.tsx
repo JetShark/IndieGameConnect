@@ -49,7 +49,7 @@ export default function ContactPage() {
           <div className="text-center mb-10">
             <h1 className="text-4xl md:text-5xl font-black text-gray-900 mb-4 tracking-tight">Contact Us</h1>
             <p className="text-gray-600 text-lg sm:text-xl max-w-xl mx-auto">
-              Have a question, feedback, or need support? Send us a message and we'll get back to you!
+              Have a question, feedback, or need support? Send us a message and we&apos;ll get back to you!
             </p>
           </div>
 
@@ -61,7 +61,7 @@ export default function ContactPage() {
                 </svg>
               </div>
               <h3 className="text-2xl font-bold mb-3">Message Sent!</h3>
-              <p className="text-lg mb-6">Thanks for reaching out. We've received your message and will get back to you shortly.</p>
+              <p className="text-lg mb-6">Thanks for reaching out. We&apos;ve received your message and will get back to you shortly.</p>
               <button 
                 onClick={() => setIsSubmitted(false)}
                 className="text-primary-600 font-semibold hover:text-primary-800 transition-colors bg-white px-6 py-2 rounded-full shadow-sm border border-green-100 hover:shadow"

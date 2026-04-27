@@ -9,7 +9,7 @@ export default function FeaturesPage() {
             Powerful Features for <span className="text-primary-600">Indie Devs</span>
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Everything you need to build your audience, engage your players, and grow your game's community.
+            Everything you need to build your audience, engage your players, and grow your game&apos;s community.
           </p>
         </div>
 
@@ -58,7 +58,7 @@ export default function FeaturesPage() {
               <div className="inline-block p-4 rounded-2xl bg-indigo-100 text-indigo-600 mb-6 text-3xl">🤝</div>
               <h2 className="text-3xl font-bold text-gray-900 mb-4">Connecting with other devs to swap mailing lists</h2>
               <p className="text-lg text-gray-600 mb-6">
-                Grow your audience exponentially by partnering with developers who make similar games. Agree to mutually promote each other's games to your respective audiences.
+                Grow your audience exponentially by partnering with developers who make similar games. Agree to mutually promote each other&apos;s games to your respective audiences.
               </p>
               <ul className="space-y-3 text-gray-600">
                 <li className="flex items-center gap-3"><span className="text-indigo-500">✓</span> Developer Directory</li>

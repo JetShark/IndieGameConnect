@@ -10,7 +10,7 @@ export default function PrivacyPolicyPage() {
           <p className="text-gray-500 font-medium mb-10">Last Updated: April 24, 2026</p>
 
           <p>
-            At IndieGameConnect, we take your privacy seriously. This Privacy Policy explains how we collect, use, store, and protect your personal data when you use our website and platform (the "Service").
+            At IndieGameConnect, we take your privacy seriously. This Privacy Policy explains how we collect, use, store, and protect your personal data when you use our website and platform (the &quot;Service&quot;).
           </p>
 
           <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">1. What Data We Collect</h2>
@@ -47,7 +47,7 @@ export default function PrivacyPolicyPage() {
           </ul>
 
           <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">5. Cookie Policy</h2>
-          <p>Our Service uses "cookies"—small text files stored on your device—to enhance your experience.</p>
+          <p>Our Service uses &quot;cookies&quot;—small text files stored on your device—to enhance your experience.</p>
           <ul className="list-disc pl-6 space-y-2 mt-4">
             <li><strong>Authentication Cookies:</strong> Used by NextAuth to keep you securely logged into your account.</li>
             <li><strong>Google Analytics (GA4) Cookies:</strong> These third-party cookies track user behavior (as outlined in Section 1) to generate aggregated statistical reports. You can opt-out of Google Analytics by installing the Google Analytics Opt-out Browser Add-on or by disabling cookies in your browser settings.</li>
@@ -57,7 +57,7 @@ export default function PrivacyPolicyPage() {
           <p>We design our data practices to comply with major global privacy frameworks:</p>
           <ul className="list-disc pl-6 space-y-2 mt-4">
             <li><strong>PIPEDA (Personal Information Protection and Electronic Documents Act):</strong> As a Canadian business, we strictly adhere to PIPEDA guidelines regarding consent, accountability, and the safeguarding of personal information.</li>
-            <li><strong>GDPR (General Data Protection Regulation):</strong> For our users in the European Economic Area (EEA), we provide full rights to data portability, access, and deletion (the "Right to be Forgotten"). Developers acting as Data Controllers on our platform must also ensure their mailing lists are GDPR compliant.</li>
+            <li><strong>GDPR (General Data Protection Regulation):</strong> For our users in the European Economic Area (EEA), we provide full rights to data portability, access, and deletion (the &quot;Right to be Forgotten&quot;). Developers acting as Data Controllers on our platform must also ensure their mailing lists are GDPR compliant.</li>
           </ul>
 
           <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">7. Contact Us</h2>

@@ -10,7 +10,7 @@ export default function AboutPage() {
         
         <div className="prose prose-lg mx-auto text-gray-600 space-y-8">
           <p className="text-2xl font-medium leading-relaxed italic text-gray-800 border-l-4 border-primary-500 pl-6 my-12">
-            "We are a group of indie game dev enthusiasts, we've seen what newsletter communities have done for book publishing, and we want to do the same for gamers!"
+            &quot;We are a group of indie game dev enthusiasts, we&apos;ve seen what newsletter communities have done for book publishing, and we want to do the same for gamers!&quot;
           </p>
           
           <p>
